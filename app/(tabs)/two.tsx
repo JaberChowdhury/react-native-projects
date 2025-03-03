@@ -1,7 +1,6 @@
 import { Stack } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 import { AlertDialog, YStack, XStack, Text, Image } from 'tamagui';
-import { LinearGradient } from 'tamagui/linear-gradient';
 import { Button } from '~/components/Button';
 export default function Home() {
   const IMAGE_URL =
