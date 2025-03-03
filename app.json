@@ -3,7 +3,7 @@
     "name": "newprjt",
     "slug": "newprjt",
     "version": "1.0.0",
-
+    "newArchEnabled": true,
     "scheme": "newprjt",
     "web": {
       "bundler": "metro",
