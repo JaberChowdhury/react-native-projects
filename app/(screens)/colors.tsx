@@ -1,25 +1,28 @@
 import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
+import Colorinfo from '~/components/Colorinfo';
+import useColor from '~/store/colors';
+import useModel from '~/store/model';
 
 const colors = () => {
-  const getColor = () => {
-    const red = Math.floor(Math.random() * 255);
-    const green = Math.floor(Math.random() * 255);
-    const blue = Math.floor(Math.random() * 255);
-    const color = `rgb(${red},${green},${blue})`;
-    return color;
-  };
-  const colordata = Array.from({ length: 201 }, () => getColor());
+  const { toggelOpen, setChildren } = useModel();
 
+  const handlePress = (color: string) => {
+    toggelOpen();
+    setChildren(<Colorinfo color={color} />);
+  };
+
+  const { color } = useColor();
   return (
     <View className="container px-3">
-      <Text>colors</Text>
+      {/* <Text>colors</Text> */}
       <ScrollView>
-        <View className="flex w-full flex-row flex-wrap items-center justify-between gap-y-3 ">
-          {colordata.map((color: string) => {
+        <View className="flex w-full flex-row flex-wrap items-center justify-between gap-y-3">
+          {color.map((color: string) => {
             return (
               <Text
-                className="size-32 rounded "
+                onPress={() => handlePress(color)}
+                className="size-32 rounded border"
                 style={{
                   backgroundColor: color,
                 }}
