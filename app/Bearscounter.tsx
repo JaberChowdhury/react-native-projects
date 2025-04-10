@@ -8,7 +8,6 @@ import Bearhistory from '~/components/Bearhistory';
 const Bearscounter = () => {
   const { bears, increasePopulation, decreasePopulation, removeAllBears, addHistory } =
     useBearStore();
-
   return (
     <Container>
       <YStack
